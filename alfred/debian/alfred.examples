@@ -1,0 +1,4 @@
+debian/examples/alfred-mz.upstart
+debian/examples/alfred-mz.default
+debian/examples/alfred-wi.upstart
+debian/examples/alfred-wi.default

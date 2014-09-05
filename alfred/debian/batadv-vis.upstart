@@ -1,0 +1,14 @@
+# Starts batadv-vis
+#
+
+description     "batadv-vis"
+author          "Tobias Hachmer <tobias@hachmer.de>"
+
+start on started alfred
+stop on stopped alfred
+
+respawn
+script
+. /etc/default/alfred
+exec /usr/sbin/batadv-vis -i ${BATMANIF} -u ${UNIX_SOCKET} -s
+end script

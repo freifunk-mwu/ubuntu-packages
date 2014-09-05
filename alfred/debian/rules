@@ -1,0 +1,104 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess
+
+export DEB_BUILD_HARDENING=1
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+BUILDDIR := debian/build
+DESTDIR := ${CURDIR}/${BUILDDIR}
+
+# These are used for cross-compiling and for saving the configure script
+# from having to guess our platform (since we know it already)
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+include /usr/share/quilt/quilt.make
+
+ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))
+        CFLAGS += -g
+endif
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+        INSTALL_PROGRAM += -s
+endif
+
+build:  build-stamp
+
+build-stamp: $(QUILT_STAMPFN)
+	dh_testdir
+	# compile alfred
+	$(MAKE) CONFIG_ALFRED_GPSD=n PREFIX=/usr all
+
+	touch $@
+
+clean: clean-patched unpatch
+clean-patched:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp 
+	rm -rf build
+	# Add here commands to clean up after the build process.
+	[ ! -f Makefile ] || $(MAKE) CONFIG_ALFRED_GPSD=n clean
+	rm -f conftest conftest.o config.log config.cache config.status ylwrap
+	[ -f config.sub.orig ] && mv config.sub.orig config.sub || true
+	[ -f config.guess.orig ] && mv config.sub.orig config.guess || true
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_prep
+
+	# Add here commands to install the package into debian/alfred.
+	$(MAKE) CONFIG_ALFRED_GPSD=n PREFIX=/usr DESTDIR=${DESTDIR}
+
+# Build architecture-independent files here.
+binary-indep: build install alfred batadv-vis
+
+binary-arch: build install alfred batadv-vis
+
+alfred:
+	dh_testdir
+	dh_testroot
+	dh_installdirs -p$@
+	dh_installdocs -p$@
+	dh_installman -p$@
+	dh_installexamples -p$@
+	dh_install --fail-missing -p$@
+	dh_installchangelogs -p$@ CHANGELOG
+	dh_installinit -p$@
+	dh_link -p$@
+	dh_strip -p$@
+	dh_compress -p$@
+	dh_fixperms -p$@
+	dh_makeshlibs -p$@
+	dh_installdeb -p$@
+	dh_shlibdeps -p$@
+	dh_gencontrol -p$@
+	dh_md5sums -p$@
+	dh_builddeb -p$@
+
+batadv-vis:
+	dh_testdir
+	dh_testroot
+	dh_installdirs -p$@
+	dh_installdocs -p$@
+	dh_installman -p$@
+	dh_installexamples -p$@
+	dh_install --fail-missing -p$@
+	dh_installchangelogs -p$@ CHANGELOG
+	dh_installinit -p$@
+	dh_link -p$@
+	dh_strip -p$@
+	dh_compress -p$@
+	dh_fixperms -p$@
+	dh_makeshlibs -p$@
+	dh_installdeb -p$@
+	dh_shlibdeps -p$@
+	dh_gencontrol -p$@
+	dh_md5sums -p$@
+	dh_builddeb -p$@
+
+binary: binary-indep binary-arch
+.PHONY: build build-arch build-indep clean binary-indep binary install alfred batadv-vis
