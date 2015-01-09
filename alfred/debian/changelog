@@ -1,3 +1,21 @@
+alfred (2014.4.0-0ffmwu0~trusty) trusty; urgency=low
+
+  * new upstream version
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Wed, 07 Jan 2015 21:31:45 +0100
+
+alfred (2014.3.0-7ffmwu2~trusty) trusty; urgency=low
+
+  * fixed variable in debian default scripts
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Fri, 02 Jan 2015 13:29:25 +0100
+
+alfred (2014.3.0-7ffmwu1~trusty) trusty; urgency=low
+
+  * change default to slave mode
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Tue, 30 Dec 2014 11:22:28 +0100
+
 alfred (2014.3.0-7ffmwu0~trusty) trusty; urgency=low
 
   * added examples for mainz + wiesbaden
