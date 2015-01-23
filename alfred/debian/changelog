@@ -1,3 +1,10 @@
+alfred (2014.4.0-0ffmwu1~trusty) trusty; urgency=low
+
+  * add patch: Tighten size check on received packet
+    http://git.open-mesh.org/alfred.git/patch/0e2728c19f507403d31bacb94840f760197d4ccb
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Fri, 23 Jan 2015 23:36:29 +010
+
 alfred (2014.4.0-0ffmwu0~trusty) trusty; urgency=low
 
   * new upstream version

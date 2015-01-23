@@ -1,0 +1,12 @@
+--- a/recv.c
++++ b/recv.c
+@@ -402,7 +402,8 @@
+                return -1;
+
+        /* drop truncated packets */
+-       if (length < ((int)ntohs(packet->length)))
++       if (length < (int)sizeof(*packet) ||
++           length < (int)(ntohs(packet->length) + sizeof(*packet)))
+                return -1;
+
+        /* drop incompatible packet */
