@@ -9,3 +9,4 @@ Pakete:
  - A.L.F.R.E.D.
  - alfred-json
  - B.A.T.M.A.N. Advanced DKMS
+ - tinc
