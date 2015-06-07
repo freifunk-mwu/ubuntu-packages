@@ -1,0 +1,548 @@
+tinc (1.0.25-0ffmwu0~trusty) trusty; urgency=low
+
+  * new upstream release
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Thu, 19 Feb 2015 17:32:03 +0100
+
+tinc (1.0.23-2) unstable; urgency=low
+
+  * Use if-statements instead of && in shell scripts. Closes: #731279
+    The && operator does not clear the error status, and if the next statement
+    in a shell script does not change the error status it would cause the
+    script to prematurely exit. Thanks to Peter Reinholdtsen for spotting it.
+  * Use absolute path to tincd in the if-post-down script.
+
+ -- Guus Sliepen <guus@debian.org>  Thu, 05 Dec 2013 09:41:13 +0000
+
+tinc (1.0.23-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Guus Sliepen <guus@debian.org>  Sat, 19 Oct 2013 21:06:05 +0200
+
+tinc (1.0.22-1) unstable; urgency=low
+
+  * New upstream release.
+    - Handles whitespace between command line flags and optional arguments.
+      Closes: #710267
+  * Bump Standards-Version.
+  * Source /lib/lsb/init-functions in the init.d script.
+  * Don't use texi2html anymore, use automake's install-html target which uses
+    makeinfo.
+
+ -- Guus Sliepen <guus@debian.org>  Wed, 14 Aug 2013 15:34:29 +0200
+
+tinc (1.0.21-1) unstable; urgency=low
+
+  * New upstream release.
+    - Includes fix for CVE-2013-1428.
+
+ -- Guus Sliepen <guus@debian.org>  Sun, 05 May 2013 10:42:33 +0200
+
+tinc (1.0.19-3) unstable; urgency=high
+
+  * Drop packets forwarded via TCP if they are too big (CVE-2013-1428).
+
+ -- Guus Sliepen <guus@debian.org>  Fri, 12 Apr 2013 22:52:10 +0200
+
+tinc (1.0.19-2) unstable; urgency=low
+
+  * Fix behaviour of tinc-pidfile. Closes: #679130
+  * Enable parallel building in debian/rules.
+
+ -- Guus Sliepen <guus@debian.org>  Tue, 26 Jun 2012 18:28:34 +0200
+
+tinc (1.0.19-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump debian/compat so tinc gets built with hardening flags.
+  * Allow tinc-pidfile in /etc/network/interfaces.
+
+ -- Guus Sliepen <guus@debian.org>  Mon, 25 Jun 2012 20:29:22 +0200
+
+tinc (1.0.18-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Guus Sliepen <guus@debian.org>  Sun, 25 Mar 2012 18:52:15 +0200
+
+tinc (1.0.17-1) unstable; urgency=low
+
+  * New upstream release.
+  * Enable support for UML and VDE.
+
+ -- Guus Sliepen <guus@debian.org>  Sat, 10 Mar 2012 14:50:00 +0100
+
+tinc (1.0.16-1) unstable; urgency=low
+
+  * New upstream release.
+  * Mention alarm option in /etc/init.d/tinc's usage information.
+    Closes: #631761
+
+ -- Guus Sliepen <guus@debian.org>  Sat, 23 Jul 2011 14:37:56 +0200
+
+tinc (1.0.15-1) unstable; urgency=low
+
+  * New upstream release.
+  * Send SIGALRM to running tinc daemons whenever an interface is brought up
+    with the ifupdown framework. Based on a patch from Joachim Breitner.
+    Closes: #629880
+  * Allow tinc daemons to be started using ifupdown.
+
+ -- Guus Sliepen <guus@debian.org>  Fri, 24 Jun 2011 18:21:51 +0200
+
+tinc (1.0.14-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump Standards-Version.
+
+ -- Guus Sliepen <guus@debian.org>  Mon, 09 May 2011 00:25:37 +0200
+
+tinc (1.0.13-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Guus Sliepen <guus@debian.org>  Tue, 13 Apr 2010 12:06:36 +0200
+
+tinc (1.0.12-2) unstable; urgency=low
+
+  * Remove debconf questions. Closes: #572116
+    Apparently debconf may not be used to ask a question at install time and
+    use the answer at upgrade time. Instead of kludging around this
+    restriction, no questions are asked anymore, and tinc will now always be
+    restarted when upgrading.
+  * Wait up to 5 seconds for tinc daemon to stop before restarting it.
+
+ -- Guus Sliepen <guus@debian.org>  Tue, 02 Mar 2010 14:01:36 +0100
+
+tinc (1.0.12-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump Standards-Version.
+  * Migrate from CDBS to debhelper.
+  * Convert source package to 3.0 (quilt) format.
+  * Remove useless tinc.modules.
+  * Use init.d script from Michael Tokarev, allowing per-network arguments to
+    tincd.
+  * Remove update-rc.d calls from postinst and postrm.
+  * Let the init.d script depend on $remote_fs.
+
+ -- Guus Sliepen <guus@debian.org>  Thu, 04 Feb 2010 00:56:45 +0100
+
+tinc (1.0.11-1) unstable; urgency=low
+
+  * New upstream release.
+  * Cope with texi2html arbitrarily changing its output directory.
+    Closes: #552927
+  * Do not stop tinc when configuring a new version, just restart after
+    the upgrade.
+
+ -- Guus Sliepen <guus@debian.org>  Sun, 01 Nov 2009 20:37:16 +0100
+
+tinc (1.0.10-1) unstable; urgency=low
+
+  * New upstream release.
+  * Include Russian debconf translation. Closes: #548759
+
+ -- Guus Sliepen <guus@debian.org>  Sun, 18 Oct 2009 16:31:49 +0200
+
+tinc (1.0.9-1) unstable; urgency=low
+
+  * New upstream release.
+    - Binds IPv6 sockets only to IPv6. Closes: #440150
+  * Update copyright file. Closes: #482566
+
+ -- Guus Sliepen <guus@debian.org>  Fri, 26 Dec 2008 13:25:05 +0100
+
+tinc (1.0.8-2) unstable; urgency=low
+
+  * Include Portugese debconf translation. Closes: #434191
+
+ -- Guus Sliepen <guus@debian.org>  Tue, 14 Aug 2007 13:50:27 +0200
+
+tinc (1.0.8-1) unstable; urgency=low
+
+  * New upstream release. Closes: #173987
+  * Include german debconf translation. Closes: #412351
+  * Build-Depend on texinfo. Closes: #424209
+
+ -- Guus Sliepen <guus@debian.org>  Wed, 16 May 2007 17:59:16 +0200
+
+tinc (1.0.7-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Guus Sliepen <guus@debian.org>  Fri,  5 Jan 2007 15:55:42 +0100
+
+tinc (1.0.6-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Guus Sliepen <guus@debian.org>  Mon, 18 Dec 2006 15:41:03 +0100
+
+tinc (1.0.5-1) unstable; urgency=low
+
+  * New upstream release. Closes: #391610
+  * Add an LSB section to the init script.
+
+ -- Guus Sliepen <guus@debian.org>  Tue, 14 Nov 2006 16:32:20 +0100
+
+tinc (1.0.4-4) unstable; urgency=low
+
+  * Include swedish debconf translation. Closes: #332963
+  * Remove nets.boot on purge. Closes: #333303
+
+ -- Guus Sliepen <guus@debian.org>  Mon, 17 Oct 2005 12:34:32 +0200
+
+tinc (1.0.4-3) unstable; urgency=low
+
+  * Depend on debconf | debconf-2.0.
+  * Include vietnamese debconf translation. Closes: #322305
+  * Include japanese debconf translation. Closes: #319591
+
+ -- Guus Sliepen <guus@debian.org>  Thu, 29 Sep 2005 11:15:34 +0200
+
+tinc (1.0.4-2) unstable; urgency=low
+
+  * Compensate for change in texinfo's output directory. Closes: #318562
+  * Include Czech translation of the debconf questions. Closes: #312982
+
+ -- Guus Sliepen <guus@debian.org>  Sat, 16 Jul 2005 11:42:04 +0200
+
+tinc (1.0.4-1) unstable; urgency=low
+
+  * New upstream release. Closes: #294819
+  * Update french translation of debconf template. Closes: #293371, #296148
+  * Allow dashes in nets.boot. Closes: #296281
+
+ -- Guus Sliepen <guus@debian.org>  Wed,  4 May 2005 21:56:22 +0200
+
+tinc (1.0.3-4) unstable; urgency=low
+
+  * Call debconf early in postinst so it won't get confused by output
+    from other commands in the postinst script. Closes: #292920
+  * If MAKEDEV doesn't know about net/tun, fall back to tun.
+
+ -- Guus Sliepen <guus@debian.org>  Mon, 31 Jan 2005 13:27:16 +0100
+
+tinc (1.0.3-3) unstable; urgency=low
+
+  * Fix clean rule in debian/rules.
+
+ -- Guus Sliepen <guus@debian.org>  Thu, 27 Jan 2005 23:16:59 +0000
+
+tinc (1.0.3-2) unstable; urgency=low
+
+  * Don't check for /dev/tap* in postinst if we don't create them anyway.
+  * MAKEDEV expects net/tun instead of tun.
+  * Don't ask if /dev/net/tun should be created, just do it.
+    Closes: #259489, #292450
+  * Move $EXTRA from init.d/tinc to /etc/default/tinc. Closes: #281366
+
+ -- Guus Sliepen <guus@debian.org>  Thu, 27 Jan 2005 14:10:02 +0100
+
+tinc (1.0.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Adopting the package from Ivo.
+  * Use invoke-rc.d, and tell user to do so as well. Closes: #223276
+  * Let force-reload do the same thing as reload. Closes: #230180
+
+ -- Guus Sliepen <guus@debian.org>  Fri,  1 Oct 2004 21:04:14 +0200
+
+tinc (1.0.2-2) unstable; urgency=low
+
+  * debian/control: Oops, really make that automake1.7.
+
+ -- Ivo Timmermans <ivo@debian.org>  Sat,  8 Nov 2003 21:53:04 +0100
+
+tinc (1.0.2-1) unstable; urgency=low
+
+  * New upstream release:
+      * Fix broken replies to CHAL_RESP.  (Closes: #217646)
+  * debian/control: Updated automake build dependency to automake1.7.
+    (Closes: #219360)
+
+ -- Ivo Timmermans <ivo@debian.org>  Sat,  8 Nov 2003 19:56:04 +0100
+
+tinc (1.0.1-2) unstable; urgency=low
+
+  * debian/dirs: Removed, moved contents to tinc.dirs.
+    (Closes: #208591)
+  * debian/docs: Renamed to tinc.docs.
+  * debian/rules: Install the contents of doc/sample-config.tar.gz in
+    /usr/share/doc/tinc/examples instead of /etc/tinc.
+  * debian/Makefile*: Removed.
+
+ -- Ivo Timmermans <ivo@debian.org>  Wed, 10 Sep 2003 12:19:32 +0200
+
+tinc (1.0.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/001_openbsd_device.c.patch: Removed.
+
+ -- Ivo Timmermans <ivo@debian.org>  Thu, 14 Aug 2003 17:03:28 +0200
+
+tinc (1.0release-1) unstable; urgency=low
+
+  * New upstream version.  (Closes: #204639)
+      * Fixes switching back to normal logging mode when killing with
+        SIGINT twice.  (Closes: #175633)
+      * Uses one SSL context struct for each connection, speeding up
+        encrypting/decrypting data; don't throw away out of sequence
+        packets.  (Closes: #188874)
+      * Fixes handling of broadcast messages.  (Closes: #175632)
+  * debian/rules: Use cdbs.
+  * debian/control: Build-Depend on cdbs, liblzo-dev.
+  * debian/patches/001_openbsd_device.c.patch: Sync openbsd/device.c to
+    latest CVS version.
+
+ -- Ivo Timmermans <ivo@debian.org>  Sun, 10 Aug 2003 16:13:29 +0200
+
+tinc (1.0pre8-6) unstable; urgency=low
+
+  * debian/po/fr.po: Added French debconf translation.  (Closes: #201803)
+
+ -- Ivo Timmermans <ivo@debian.org>  Fri, 18 Jul 2003 10:03:20 +0200
+
+tinc (1.0pre8-5) unstable; urgency=low
+
+  * debian/*: Change to po-debconf, thanks to From: Michel Grentzinger
+    <mic.grentz@online.fr> for the patch:
+      - change debhelper dependency to 4.1.16 (according to man
+        po-debconf),
+      - manually add nl translation in old tinc.templates (master),
+      - run debconf-gettextize debian/tinc.templates,
+      - move old templates files (debian/tinc.templates.*),
+      - change construction "If you say no" to "If you refuse",
+  * debian/rules: Call po2debconf.
+  * debian/rules: Don't copy COPYING.README to the package.
+  * debian/control: Update Standards-Version.
+  * debian/conffiles: Removed.
+  * debian/postinst: No longer use mknod directly, use MAKEDEV.
+
+ -- Ivo Timmermans <ivo@debian.org>  Tue, 15 Jul 2003 20:13:47 +0200
+
+tinc (1.0pre8-4) unstable; urgency=low
+
+  * src/net.h, src/net_packet.c, src/net_setup.c: Apply fix from CVS
+    for OpenSSL-related memory leaks.  (Closes: #189432)
+
+ -- Ivo Timmermans <ivo@debian.org>  Mon,  5 May 2003 15:00:29 +0200
+
+tinc (1.0pre8-3) unstable; urgency=low
+
+  * m4/openssl.m4: Updated to CVS version.  (Closes: #184400)
+
+ -- Ivo Timmermans <ivo@debian.org>  Thu, 13 Mar 2003 17:24:42 +0100
+
+tinc (1.0pre8-2) unstable; urgency=low
+
+  * debian/postinst: Create /dev/net/tun if it doesn't exist.
+  * debian/tinc.modules: Add alias for /dev/net/tun.
+  * debian/rules: Install tinc.modules.
+  * These things together: (Closes: #151967, #153156)
+
+ -- Ivo Timmermans <ivo@debian.org>  Wed, 13 Nov 2002 22:45:38 +0100
+
+tinc (1.0pre8-1) unstable; urgency=low
+
+  * New upstream version.
+  * debian/rules:
+      - DEB_BUILD_OPTIONS support.
+      - Enable --enable-tracing by default.
+
+ -- Ivo Timmermans <ivo@debian.org>  Tue, 17 Sep 2002 13:50:44 +0200
+
+tinc (1.0pre7-3) unstable; urgency=low
+
+  * Properly install _all_ info pages. (Closes: #144718)
+
+ -- Ivo Timmermans <ivo@debian.org>  Wed, 29 May 2002 14:01:21 +0200
+
+tinc (1.0pre7-2) unstable; urgency=low
+
+  * Dutch translation wasn't being installed.
+
+ -- Ivo Timmermans <ivo@debian.org>  Thu, 11 Apr 2002 09:26:14 +0200
+
+tinc (1.0pre7-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Ivo Timmermans <ivo@debian.org>  Tue,  9 Apr 2002 16:04:46 +0200
+
+tinc (1.0pre6-3) unstable; urgency=medium
+
+  * Synched with upstream CVS.
+  * Added build dependency on zlib1g-dev. (Closes: #141705)
+
+ -- Ivo Timmermans <ivo@debian.org>  Mon,  8 Apr 2002 21:19:31 +0200
+
+tinc (1.0pre6-2) unstable; urgency=low
+
+  * The Section was non-US again, so changed it back to main/net.
+
+ -- Ivo Timmermans <ivo@debian.org>  Thu, 28 Mar 2002 07:26:10 +0100
+
+tinc (1.0pre6-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fixed text in debian/copyright
+
+ -- Ivo Timmermans <ivo@debian.org>  Wed, 27 Mar 2002 23:10:07 +0100
+
+tinc (1.0pre5-4) unstable; urgency=low
+
+  * Added a debconf question for restarting on upgrade.
+  * Added reload option to init.d, start with EXTRA='-d' default.
+  * Moved from non-US to main.
+  * Install example configuration files.
+  * The HTML documentation wasn't installed; fixed.
+
+ -- Ivo Timmermans <ivo@debian.org>  Tue, 26 Mar 2002 20:14:19 +0100
+
+tinc (1.0pre5-3) unstable; urgency=low
+
+  * Config variables are now treated case sentitivly again.
+  * Added a forgotten xstrdup.
+
+ -- Ivo Timmermans <ivo@debian.org>  Fri, 15 Feb 2002 12:35:17 +0100
+
+tinc (1.0pre5-2) unstable; urgency=low
+
+  * MaxTimeout accidentally wasn't configurable. (Closes: #119653)
+
+ -- Ivo Timmermans <ivo@debian.org>  Wed, 13 Feb 2002 13:36:54 +0100
+
+tinc (1.0pre5-1) unstable; urgency=low
+
+  * New upstream version. (Closes: #119653)
+  * Init script redone in sh.
+
+ -- Ivo Timmermans <ivo@debian.org>  Sun, 10 Feb 2002 16:39:53 +0100
+
+tinc (1.0pre4-1.cvs010621.6) unstable; urgency=low
+
+  * Somehow po-Makefile.in.in.diff got lost, readded. (Closes: #119157)
+
+ -- Ivo Timmermans <ivo@debian.org>  Thu, 15 Nov 2001 17:00:03 +0100
+
+tinc (1.0pre4-1.cvs010621.5) unstable; urgency=low
+
+  * Fix a typo in postinst that let it MAKEDEV even on devfs.
+    (Closes: #116034)
+
+ -- Ivo Timmermans <ivo@debian.org>  Thu, 18 Oct 2001 09:35:16 +0200
+
+tinc (1.0pre4-1.cvs010621.4) unstable; urgency=low
+
+  * Ask before creating the device files. (Closes: #111099)
+  * Add a section to the info file.
+
+ -- Ivo Timmermans <ivo@debian.org>  Fri, 12 Oct 2001 20:47:09 +0200
+
+tinc (1.0pre4-1.cvs010621.3) unstable; urgency=low
+
+  * Build and install html documentation. (Closes: #106843)
+  * Remove build-time dependency on libc6-dev.
+
+ -- Ivo Timmermans <ivo@debian.org>  Mon, 30 Jul 2001 22:03:52 +0200
+
+tinc (1.0pre4-1.cvs010621.2) unstable; urgency=low
+
+  * Changed location of the pidfile. (Closes: #102798)
+
+ -- Ivo Timmermans <ivo@debian.org>  Sun,  1 Jul 2001 01:57:43 +0200
+
+tinc (1.0pre4-1.cvs010621.1) unstable; urgency=low
+
+  * New upstream version. (Closes: #98730)
+  * Rebuilding automatically inserted new config.{sub|guess}.
+    (Closes: #98165)
+  * Updated Standards-Version.
+  * Don't include a sample configuration file.
+
+ -- Ivo Timmermans <ivo@debian.org>  Thu, 21 Jun 2001 14:08:49 +0200
+
+tinc (1.0pre3-5) unstable; urgency=low
+
+  * Fixed an error in the init script that prevented tinc from
+    starting correctly.
+
+ -- Ivo Timmermans <ivo@debian.org>  Thu,  8 Feb 2001 02:45:09 +0100
+
+tinc (1.0pre3-4) unstable; urgency=low
+
+  * Change build-depends for OpenSSL to libssl096-dev
+    (Closes: #84197, #84873).
+
+ -- Ivo Timmermans <ivo@debian.org>  Sun,  4 Feb 2001 22:43:22 +0100
+
+tinc (1.0pre3-3) unstable; urgency=low
+
+  * Set architecture to any (really this time!) (Closes: #80451).
+  * Section set to non-US
+
+ -- Ivo Timmermans <ivo@debian.org>  Tue, 23 Jan 2001 22:52:53 +0100
+
+tinc (1.0pre3-2) unstable; urgency=low
+
+  * Set architecture to any (Closes: #80451).
+  * Added tinc.modules with some useful module aliases.
+
+ -- Ivo Timmermans <ivo@debian.org>  Sat, 13 Jan 2001 16:10:57 +0100
+
+tinc (1.0pre3-1) unstable; urgency=low
+
+  * New upstream version (1.0pre3) (Closes: #71274).
+  * Better Depends and Build-Depends lines.
+  * Dropped dependencies on libgmp, added libssl.
+  * doc-base.tinc: New file.
+  * Deleted the file shlibs, as there on longer is a libblowfish.
+  * Patch po/Makefile.in.in from po-Makefile.in.in.diff if necessary.
+  * Use dh_perl to get accurate perl dependencies.
+
+ -- Ivo Timmermans <ivo@debian.org>  Thu,  9 Nov 2000 21:58:40 +0100
+
+tinc (1.0pre2-1.1) unstable; urgency=low
+
+  * NMU at Ivo's request as his application is being processed, and his
+    sponsor is based in the US.
+
+ -- J.H.M. Dassen (Ray) <jdassen@debian.org>  Wed, 28 Jun 2000 21:52:30 +0200
+
+tinc (1.0pre2-1) unstable; urgency=low
+
+  * postinst creates a file /etc/tinc/nets.boot, containing all networks
+    to be started upon system startup;
+  * init.d script starts all networks from that list.
+  * postinst script creates tap devices.
+
+ -- Ivo Timmermans <itimmermans@bigfoot.com>  Tue, 16 May 2000 00:06:25 +0200
+
+tinc (1.0pre1-0.4) unstable; urgency=low
+
+  * postinst script.
+
+ -- Ivo Timmermans <itimmermans@bigfoot.com>  Mon, 15 May 2000 19:22:05 +0200
+
+tinc (1.0pre1-0.3) unstable; urgency=low
+
+  * system startup script.
+
+ -- Ivo Timmermans <itimmermans@bigfoot.com>  Sun, 14 May 2000 22:58:02 +0200
+  
+tinc (1.0pre1-0.2) unstable; urgency=low
+
+  * Included the blowfish license.
+
+ -- Ivo Timmermans <itimmermans@bigfoot.com>  Fri, 21 Apr 2000 17:07:50 +0200
+
+tinc (1.0pre1-0.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Ivo Timmermans <itimmermans@bigfoot.com>  Fri, 21 Apr 2000 17:07:50 +0200
+
+

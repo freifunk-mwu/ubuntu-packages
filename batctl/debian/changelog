@@ -1,0 +1,300 @@
+batctl (2015.0-0ffmwu0~trusty) trusty; urgency=medium
+
+  * new upstream release
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Mon, 18 May 2015 14:45:44 +0200
+
+batctl (2014.4.0-0ffmwu0~trusty) trusty; urgency=low
+
+  * new upstream version
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Wed, 07 Jan 2015 21:45:21 +0100
+
+batctl (2014.3.0-0ffmwu0~trusty) trusty; urgency=low
+
+  * new upstream release
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Tue, 09 Sep 2014 15:43:59 +0200
+
+batctl (2014.2.0-2ffmwu0~trusty) trusty; urgency=low
+
+  * change packet version tag
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Sun, 31 Aug 2014 18:23:50 +0200
+
+batctl (2014.2.0-1ffmzwi1) trusty; urgency=low
+
+  * fix dependency
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Fri, 22 Aug 2014 18:16:13 +0200
+
+batctl (2014.2.0-1ffmzwi0) trusty; urgency=low
+
+  * new upstream version
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Fri, 22 Aug 2014 17:53:41 +0200
+
+batctl (2013.4.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Mon, 02 Dec 2013 07:25:20 +0100
+
+batctl (2013.3.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Tue, 17 Sep 2013 10:15:47 +0200
+
+batctl (2013.1.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Mon, 11 Mar 2013 13:19:29 +0100
+
+batctl (2012.4.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Tue, 13 Nov 2012 18:56:18 +0100
+
+batctl (2012.3.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Sat, 06 Oct 2012 21:02:02 +0200
+
+batctl (2010.0.0-2) unstable; urgency=low
+
+  * Upgraded to policy 3.9.0, no changes required
+  * Only build on linux-any due to linux dependencies of batman-adv
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Tue, 29 Jun 2010 22:22:28 +0200
+
+batctl (2010.0.0-1) unstable; urgency=low
+
+  * New Upstream Version
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sat, 19 Jun 2010 00:11:11 +0200
+
+batctl (0.2.1-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Updated debian/copyright
+  * debian/rules:
+    - Enable parallel builds using dh's --parallel
+    - Inform about missing installed files using dh's --list-missing
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Tue, 23 Mar 2010 00:35:51 +0100
+
+batctl (0.2-2) unstable; urgency=low
+
+  * Correct spelling errors found by lintian
+  * debian/copyright: Update copyright years
+  * Upgraded to policy 3.8.4, no changes required
+  * Remove outdated README.source
+  * Don't list removed transitional packages in README.Debian
+  * Call dh_auto_install with needed parameters in debian/rules
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Mon, 01 Mar 2010 13:53:07 +0100
+
+batctl (0.2-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Convert to 3.0 (quilt) source format
+  * Change current upstream maintainer to Marek Lindner
+  * debian/control:
+    - Remove shlibs:Depends for binary packages without shared libs dependencies
+    - Rewrote descriptions for batctl with new features
+    - Remove cdbs and change debhelper dependency to 7 for for dh support
+    - Remove batman-adv-battool transitional due to conflict with same package
+      in unstable
+  * Rewrote debian/rules with dh
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 08 Nov 2009 18:15:04 +0100
+
+batctl (0.2~beta~svn1445-1) experimental; urgency=low
+
+  * New Upstream Snapshot
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Tue, 20 Oct 2009 20:02:00 +0200
+
+batctl (0.2~beta~svn1431-1) experimental; urgency=low
+
+  * New Upstream Snapshot
+  * Upgraded to policy 3.8.3, no changes required
+  * Add README.source with information about patch management
+  * Remove unused lintian overrides
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 13 Sep 2009 00:46:50 +0200
+
+batctl (0.2~beta~svn1366-1) experimental; urgency=low
+
+  * New Upstream Snapshot
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Thu, 06 Aug 2009 19:13:31 +0200
+
+batctl (0.2~beta~svn1318-1) experimental; urgency=low
+
+  * New Upstream Snapshot (Closes: #534179)
+  * Rename binary package batman-adv-kernelland to batctl
+  * debian/control:
+    - Rename source from battool to new new upstream name batctl
+    - Add new transitional package batman-adv-battool
+    - Depend on cdbs >= 0.4.52 for DEB_DH_GENCONTROL_ARGS_*
+  * Install bat-hosts.sample as example configuration
+  * Override lintian warning latest-debian-changelog-entry-without-new-version
+    due to changed binary and source name, but kept debian/changelog
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Tue, 23 Jun 2009 11:04:24 +0200
+
+battool (1:0.1~beta+svn1236-4) unstable; urgency=low
+
+  * Recommend either batman-adv-dkms or batman-adv-modules for
+    batman-adv-battool in debian/control
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Tue, 20 Oct 2009 19:56:16 +0200
+
+battool (1:0.1~beta+svn1236-3) unstable; urgency=low
+
+  * Upgraded to policy 3.8.3, no changes required
+  * Add README.source with information about patch management
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Thu, 15 Oct 2009 18:50:03 +0200
+
+battool (1:0.1~beta+svn1236-2) unstable; urgency=low
+
+  * Reduce debhelper dependency to 5
+  * Convert debian/copyright to new dep5 version
+  * Upgraded to policy 3.8.2, no changes required
+  * Add get-orig-source target to retrieve source in debian/rules
+  * Add debian/get-orig-source.sh to get source from svn or via uscan
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 21 Jun 2009 18:54:11 +0200
+
+battool (1:0.1~beta+svn1236-1) unstable; urgency=low
+
+  * Update to upstream revision 1236
+  * Rewrote debian/rules using cdbs
+  * debian/control:
+    - Move Vcs-* to git.debian.org
+    - Add package batman-adv-battool-dbg with debug symbols
+    - Upgraded to policy 3.8.1, no changes required
+    - Allow Debian Maintainers to upload new versions of battool
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Wed, 06 May 2009 13:08:36 +0200
+
+battool (1:0.1~beta+svn1193-1) unstable; urgency=low
+
+  * Update to upstream revision 1193
+  * Correct URL in watch file to match newer releases
+  * debian/rules: Use CFLAGS from dpkg-buildpackage
+  * debian/copyright: Update copyright years
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Tue, 20 Jan 2009 00:17:50 +0100
+
+battool (1:0.1~beta+svn1158-2) unstable; urgency=low
+
+  * Correct description of battool in debian/README.Debian
+  * Recommend batman-adv-modules and suggest batman-adv-source
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 11 Jan 2009 14:08:08 +0100
+
+battool (1:0.1~beta+svn1158-1) unstable; urgency=low
+
+  * Split batman-adv source package in batman-adv-kernelland and battool
+    to match with upstream released tar.gz
+  * debian/rules:
+    - Use dh_clean to remove *-stamp files
+    - Use dh_installman to install manpages
+    - Replace dh_clean -k with dh_prep
+  * Change upstream url to http://www.open-mesh.net/
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Fri, 02 Jan 2009 14:20:44 +0100
+
+batman-adv (0.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Install upstream changelog for batman-adv-source
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 28 Dec 2008 12:37:37 +0100
+
+batman-adv (0.1~beta+svn1154-1) unstable; urgency=low
+
+  * Support changed directory layout in upstream
+  * Correct name of battool package in debian/Readme.DEBIAN
+  * Fix installation of the renamed kernel module
+  * Replace batman-adv@packages.debian.org maintainer with first Uploader in
+    debian/control
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Mon, 17 Nov 2008 11:28:35 +0100
+
+batman-adv (0.1~beta+svn1141-1) unstable; urgency=low
+
+  * Update to upstream revision 1141
+  * debian/copyright:
+    - Add Andreas Langer who has also copyright to battool/*
+    - Set copyright of debian/* to Simon Wunderlich and myself
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 26 Oct 2008 09:42:25 +0100
+
+batman-adv (0.1~beta+svn1105-3) unstable; urgency=low
+
+  * reuse orig.tar.gz from 0.1~beta+svn1105-1 release
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 14 Sep 2008 14:24:34 +0200
+
+batman-adv (0.1~beta+svn1105-2) unstable; urgency=low
+
+  * remove useless dh_install* and dh_shlibdeps -i from rules
+  * move maintainer to uploaders field in control for multiple maintainers
+  * add debian watch file for uscan/dehs
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sat, 13 Sep 2008 01:19:11 +0200
+
+batman-adv (0.1~beta+svn1105-1) unstable; urgency=low
+
+  * update to upstream revision 1105 (various fixes)
+
+ -- Simon Wunderlich <siwu@hrz.tu-chemnitz.de>  Mon, 11 Aug 2008 14:04:34 +0200
+
+batman-adv (0.1~beta+svn1092-1) unstable; urgency=low
+
+  [ Sven Eckelmann ]
+  * clean up orig (some paths were only included for symlinked files)
+  * remove dpatch prebuild dependency 
+  * fix copyright issues
+  * clean up debian/rules, use dh_testroot
+  * fix package descriptions
+  * upstream fixes copyright notes
+
+ -- Simon Wunderlich <siwu@hrz.tu-chemnitz.de>  Mon, 07 Jul 2008 00:29:07 +0200
+
+batman-adv (0.1~beta+svn1091-1) unstable; urgency=low
+
+  [ Sven Eckelmann ]
+  * update to latest upstream svn revision (fixes some bugs)
+  * Use batman-adv as short name instead of batman-adv-source
+  * Push module standard version to 3.8.0
+  * DEB_BUILD_OPTIONS support for noopt
+  * Fix lintian warning latest-debian-changelog-entry-without-new-date 
+  * add git vcs to control file
+  * clean up source package
+
+  [ Simon Wunderlich ]
+  * remove predependency of dialog for battool
+
+ -- Simon Wunderlich <siwu@hrz.tu-chemnitz.de>  Sat, 05 Jul 2008 18:12:25 +0200
+
+batman-adv (0.1~beta+svn1082-2) unstable; urgency=low
+
+  * fix Description for batman-adv-battool
+
+ -- Simon Wunderlich <siwu@hrz.tu-chemnitz.de>  Sun, 22 Jun 2008 20:51:13 +0200
+
+batman-adv (0.1~beta+svn1082-1) unstable; urgency=low
+
+  * Initial release (Closes: #478729) 
+
+ -- Simon Wunderlich <siwu@hrz.tu-chemnitz.de>  Sun, 27 Apr 2008 21:02:23 +0200
+

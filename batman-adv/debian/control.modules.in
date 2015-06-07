@@ -1,0 +1,29 @@
+Source: batman-adv-kernelland
+Section: kernel
+Priority: optional
+Maintainer: Simon Wunderlich <siwu@hrz.tu-chemnitz.de>
+Build-Depends: gcc (>= 4:4.0) [!m68k], gcc-3.3 [m68k], binutils-hppa64 [hppa], gcc-4.0-hppa64 [hppa], debhelper (>= 7), dpkg-dev (>= 1.10.23), debianutils (>= 1.6), sparc-utils [sparc], module-assistant, linux-headers-_KVERS_
+XS-Vcs-Svn: http://downloads.open-mesh.net/svn/batman/trunk
+Standards-Version: 3.8.1
+Homepage: http://www.open-mesh.net/
+
+Package: batman-adv-modules-_KVERS_
+Architecture: any
+Provides: batman-adv-modules
+Recommends: batctl
+Description: batman-adv modules for Linux (kernel _KVERS_).
+ This package contains the set of loadable kernel modules for the
+ Layer 2 Mesh B.A.T.M.A.N.
+ .
+ B.A.T.M.A.N. (better approach to mobile ad-hoc networking) is a new routing
+ protocol for multi-hop ad-hoc mesh networks. B.A.T.M.A.N.-advanced is the
+ implementation of this protocol on ISO/OSI Layer 2, allowing mesh networks
+ to be used as a virtual switch. With this approach, LANs and WANs can be
+ easily integrated, and more protocols (like DHCP, IPv6) are supported.
+ .
+ This package contains the compiled kernel modules for _KVERS_
+ .
+ If you have compiled your own kernel, you will most likely need to build
+ your own batman-adv-modules. The batman-adv-source package has been
+ provided for use with the Debian's module-assistant or kernel-package
+ utilities to produce a version of batman-adv-modules for your kernel.

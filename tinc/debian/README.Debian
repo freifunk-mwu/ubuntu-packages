@@ -1,0 +1,43 @@
+tinc for Debian
+----------------------
+
+The manual for tinc is also available as info pages, type `info tinc'
+to read it.
+
+The system startup script for tinc, /etc/init.d/tinc, uses the file
+/etc/tinc/nets.boot to find out which networks have to be started.
+
+Alternatively, you can create a stanza in /etc/network/interfaces, and add a
+line with "tinc-net <netname>". This will cause a tincd to be started which
+uses the configuration from /etc/tinc/<netname>. You can use an inet static
+(with address and netmask options) or inet dhcp stanza, in which case the ifup
+will configure the VPN interface and you do not need to have a tinc-up script.
+
+The following options are also recognized and map directly to the corresponding
+command line options for tincd:
+
+tinc-config <directory>
+tinc-debug <level>
+tinc-mlock yes
+tinc-logfile <filename>
+tinc-pidfile <filename>
+tinc-chroot yes
+tinc-user <username>
+
+An example stanza:
+
+iface vpn inet static
+	address 192.168.2.42
+	netmask 255.255.0.0
+	tinc-net myvpn
+	tinc-debug 1
+	tinc-mlock yes
+	tinc-user nobody
+	tinc-pidfile /tmp/tinc.pid
+
+This will start a tinc daemon that reads its configuration from
+/etc/tinc/myvpn, logs at debug level 1, locks itself in RAM, runs as user
+nobody, writes the PID to /tmp/tinc.pid, and creates a network interface called
+"vpn". Ifup then sets the address and netmask on that interface.
+
+ -- Guus Sliepen <guus@debian.org>, Fri, 25 June 2012, 20:28:35 +0200

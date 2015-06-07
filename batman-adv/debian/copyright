@@ -1,0 +1,25 @@
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=48
+Name: B.A.T.M.A.N. Advanced
+Maintainer: Marek Lindner <lindner_marek@yahoo.de>
+ Simon Wunderlich <siwu@hrz.tu-chemnitz.de>
+Source: http://www.open-mesh.net/
+
+Files: *
+Copyright: 2006-2010, Marek Lindner <lindner_marek@yahoo.de>
+           2006-2010, Simon Wunderlich <siwu@hrz.tu-chemnitz.de>
+License: GPL-2
+ On Debian systems the full text of the GNU General Public License can be found
+ in the `/usr/share/common-licenses/GPL-2' file.
+
+Files: bat_printk.c
+Copyright: 1991, 1992  Linus Torvalds
+License: GPL-2
+ On Debian systems the full text of the GNU General Public License can be found
+ in the `/usr/share/common-licenses/GPL-2' file.
+
+Files: debian/*
+Copyright: 2008-2010, Simon Wunderlich <siwu@hrz.tu-chemnitz.de>
+           2008-2010, Sven Eckelmann <sven.eckelmann@gmx.de>
+License: GPL-2
+ On Debian systems the full text of the GNU General Public License can be found
+ in the `/usr/share/common-licenses/GPL-2' file.

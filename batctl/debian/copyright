@@ -1,0 +1,20 @@
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=48
+Name: B.A.T.M.A.N. advanced control and management tool
+Maintainer: Marek Lindner <lindner_marek@yahoo.de>
+Source: http://www.open-mesh.net/
+
+Files: *
+Copyright: 2007-2010, Andreas Langer <a.langer@q-dsl.de>
+           2006-2010, Marek Lindner <lindner_marek@yahoo.de>
+           2006-2010, Simon Wunderlich <siwu@hrz.tu-chemnitz.de>
+	   2009-2010, Andrew Lunn <andrew@lunn.ch>
+License: GPL-2
+ On Debian systems the full text of the GNU General Public License can be found
+ in the `/usr/share/common-licenses/GPL-2' file.
+
+Files: debian/*
+Copyright: 2008-2010, Simon Wunderlich <siwu@hrz.tu-chemnitz.de>
+           2008-2010, Sven Eckelmann <sven.eckelmann@gmx.de>
+License: GPL-2
+ On Debian systems the full text of the GNU General Public License can be found
+ in the `/usr/share/common-licenses/GPL-2' file.

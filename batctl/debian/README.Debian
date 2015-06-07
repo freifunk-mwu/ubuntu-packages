@@ -1,0 +1,11 @@
+batctl for Debian
+----------------------------
+
+Please see ./README for a description of the batctl software.
+
+The Debian batctl source package provides two packages,
+
+ 1) batctl, which provides the userspace utilities for batman-adv-kernelland
+ 2) batctl-dbg, which provides the debug symbols for batctl
+
+ -- Simon Wunderlich <siwu@hrz.tu-chemnitz.de>  Mon, 22 Jun 2009 00:44:35 +0200

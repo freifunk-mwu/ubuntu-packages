@@ -1,0 +1,16 @@
+Source: tinc
+Section: net
+Priority: optional
+Maintainer: Tobias Hachmer <network@kokelnet.de>
+Standards-Version: 3.9.4
+Build-Depends: libssl-dev, debhelper (>= 9), gettext, texinfo, zlib1g-dev, liblzo2-dev, libvdeplug-dev
+Homepage: http://www.tinc-vpn.org/
+
+Package: tinc
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Virtual Private Network daemon
+ tinc is a daemon with which you can create a virtual private network
+ (VPN). One daemon can handle multiple connections, so you can
+ create an entire (moderately sized) VPN with only one daemon per
+ participating computer.

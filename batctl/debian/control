@@ -1,0 +1,42 @@
+Source: batctl
+Section: net
+Priority: extra
+Maintainer: Tobias Hachmer (KokelNET) <network@kokelnet.de>
+Dm-Upload-Allowed: yes
+Homepage: http://www.open-mesh.net/
+Standards-Version: 3.9.3
+Vcs-Browser: http://git.debian.org/?p=collab-maint/batctl.git
+Vcs-Git: git://git.debian.org/git/collab-maint/batctl.git
+Build-Depends: debhelper (>= 7.4.10), libnl-3-dev (>= 3.0), pkg-config
+
+Package: batctl
+Architecture: linux-any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Recommends: batman-adv-dkms | batman-adv-modules
+Suggests: batman-adv-source
+Description: B.A.T.M.A.N. advanced control and management tool
+ This package contains batctl, which serves as configuration utility,
+ monitoring and debugging application. It allows to modify the module
+ parameters, reading the logfiles and tables, decapsulate embedded packets on
+ the fly, traceroute to and ping mac addresses, generate sequence number graphs
+ for the Layer 2 Mesh B.A.T.M.A.N.
+ .
+ B.A.T.M.A.N. (better approach to mobile ad-hoc networking) is a new routing
+ protocol for multi-hop ad-hoc mesh networks. B.A.T.M.A.N.-advanced is the
+ implementation of this protocol on ISO/OSI Layer 2, allowing mesh networks to
+ be used as a virtual switch. With this approach, LANs and WANs can be easily
+ integrated, and more protocols (like DHCP, IPv6) are supported.
+
+Package: batctl-dbg
+Section: debug
+Architecture: linux-any
+Depends: ${misc:Depends},
+ batctl (= ${binary:Version})
+Description: B.A.T.M.A.N. advanced control and management tool (debug files)
+ batctl serves as configuration utility, monitoring and debugging application.
+ It allows to modify the module parameters, reading the logfiles and tables,
+ decapsulate embedded packets on the fly, traceroute to and ping mac addresses,
+ generate sequence number graphs for the Layer 2 Mesh B.A.T.M.A.N.
+ .
+ This package contains the debug files.

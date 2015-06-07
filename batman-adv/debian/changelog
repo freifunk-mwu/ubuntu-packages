@@ -1,0 +1,486 @@
+batman-adv-kernelland (2015.0-0ffmwu0~trusty) trusty; urgency=medium
+
+  * new upstream version
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Mon, 18 May 2015 14:39:23 +0200
+
+batman-adv-kernelland (2014.4.0-0ffmwu0~trusty) trusty; urgency=low
+
+  * new upstream version
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Wed, 07 Jan 2015 21:40:36 +0100
+
+batman-adv-kernelland (2014.3.0-2ffmwu1~trusty) trusty; urgency=low
+
+  * fix delayed foreign originator recognition
+    - https://lists.open-mesh.org/pipermail/b.a.t.m.a.n/2014-October/012488.html
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Sat, 01 Nov 2014 13:49:17 +0100
+
+batman-adv-kernelland (2014.3.0-2ffmwu0~trusty) trusty; urgency=low
+
+  * fix counter for multicast supporting nodes
+    - https://lists.open-mesh.org/pipermail/b.a.t.m.a.n/2014-October/012487.html
+  * fix multicast counter when purging originators
+    - https://lists.open-mesh.org/pipermail/b.a.t.m.a.n/2014-October/012485.html
+  * activate multicast_mode again
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Sat, 01 Nov 2014 13:21:01 +0100
+
+batman-adv-kernelland (2014.3.0-1ffmwu1~trusty) trusty; urgency=low
+
+  * fix counter for multicast supporting nodes
+    - see https://lists.open-mesh.org/pipermail/b.a.t.m.a.n/2014-October/012463.html
+    - activate multicast_mode by default
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Sat, 11 Oct 2014 15:23:15 +0200
+
+batman-adv-kernelland (2014.3.0-1ffmwu0~trusty) trusty; urgency=low
+
+  * deactivate multicast_mode by default
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Sun, 05 Oct 2014 15:46:43 +0200
+
+batman-adv-kernelland (2014.3.0-0ffmwu0~trusty) trusty; urgency=low
+
+  * new upstream release
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Tue, 09 Sep 2014 15:31:42 +0200
+
+batman-adv-kernelland (2014.2.0-2ffmwu0~trusty) trusty; urgency=low
+
+  * change packet version tag
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Sun, 31 Aug 2014 18:16:28 +0200
+
+batman-adv-kernelland (2014.2.0-1ffmzwi0) trusty; urgency=low
+
+  * new upstream version
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Fri, 22 Aug 2014 17:41:41 +0200
+
+batman-adv-kernelland (2013.4.0-3) unstable; urgency=low
+
+  * Fix build on Linux 3.16
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Sun, 17 Aug 2014 15:13:52 +0200
+
+batman-adv-kernelland (2013.4.0-2) unstable; urgency=low
+
+  * Add no_rebroadcast patch
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Sun, 02 Mar 2014 00:52:12 +0100
+
+batman-adv-kernelland (2013.4.0-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Mon, 02 Dec 2013 06:59:18 +0100
+
+batman-adv-kernelland (2013.3.0-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Tue, 17 Sep 2013 10:12:09 +0200
+
+batman-adv-kernelland (2013.1.0-3) unstable; urgency=low
+
+  * Update Debian compatiblity patch
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Sat, 16 Mar 2013 12:25:19 +0100
+
+batman-adv-kernelland (2013.1.0-2) unstable; urgency=low
+
+  * Fix compatiblity with Debian kernel v3.2.39
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Fri, 15 Mar 2013 22:58:32 +0100
+
+batman-adv-kernelland (2013.1.0-1) unstable; urgency=low
+
+  * New upstream version
+  * Add some patches
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Mon, 11 Mar 2013 13:16:12 +0100
+
+batman-adv-kernelland (2012.4.0-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Tue, 13 Nov 2012 19:04:07 +0100
+
+batman-adv-kernelland (2012.3.0-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Matthias Schiffer <mschiffer@universe-factory.net>  Sat, 06 Oct 2012 20:50:57 +0200
+
+batman-adv-kernelland (2010.0.0-2) unstable; urgency=low
+
+  * Correct destination path of dkms module
+  * Upgraded to policy 3.9.1, no changes required
+  * debian/patches:
+    - Add foreign_stats.patch, Don't increment stats of foreign device (Closes:
+      #593473)
+    - Add orig_hash_deadlock.patch, unify orig_hash_lock spinlock handling to
+      avoid deadlocks (Closes: #593519)
+    - Add register_event.patch, Create batman_if only on register event (Closes:
+      #593471)
+    - Add netdev_reference.patch, Don't use net_dev after dev_put (Closes:
+      #593472)
+    - Add mac_packet_buff_check.patch, Don't write in not allocated packet_buff
+      (Closes: #593724)
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sat, 21 Aug 2010 10:47:59 +0200
+
+batman-adv-kernelland (2010.0.0-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Download snapshots from git repository when using debian/get-orig-source.sh
+  * Correct URL in watch file to match newer releases
+  * debian/patches:
+    - Remove upstream merged patches: bat0_failure_memleak.patch,
+      limit_queues.patch, seqno_redesign.patch, update_ethhdr_after_copy.patch
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sat, 19 Jun 2010 00:02:48 +0200
+
+batman-adv-kernelland (0.2.1-2) unstable; urgency=low
+
+  * debian/patches:
+    - Add seqno_redesign.patch, Reorganize sequence number handling to reduce
+      broadcast loops
+    - Add limit_queues.patch, Limit queue lengths for batman and broadcast
+      packets
+    - Add bat0_failure_memleak.patch, kfree_skb() in interface_tx() in error
+      case
+    - Add update_ethhdr_after_copy.patch, Update pointer to ethhdr after
+      skb_copy
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Mon, 26 Apr 2010 22:33:03 +0200
+
+batman-adv-kernelland (0.2.1-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Remove outdated README.source
+  * Updated debian/copyright
+  * debian/patches:
+    - Remove upstream merged irqdeadlock.patch, missing_kfree.patch,
+      random_mac.patch, route_flapping.patch, vis_rounding.patch
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Tue, 23 Mar 2010 01:11:04 +0100
+
+batman-adv-kernelland (0.2-6) unstable; urgency=low
+
+  * debian/copyright: Update copyright years
+  * Upgraded to policy 3.8.4, no changes required
+  * Use dh_dkms to provide DKMS support
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Mon, 01 Mar 2010 12:51:54 +0100
+
+batman-adv-kernelland (0.2-5) unstable; urgency=low
+
+  * Correct spelling errors found by lintian
+  * Use dkms postinst script for batman-adv-dkms (Closes LP: #497149)
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Thu, 14 Jan 2010 00:01:22 +0100
+
+batman-adv-kernelland (0.2-4) unstable; urgency=low
+
+  * Add ${misc:Depends} debhelper for batman-adv-source
+  * debian/patches:
+    - Add route_flapping.patch, decrease route flapping in perfect environments
+    - Add random_mac.patch, Copy complete 6 bytes of a random ethernet address
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sat, 02 Jan 2010 00:15:50 +0100
+
+batman-adv-kernelland (0.2-3) unstable; urgency=low
+
+  * debian/patches:
+    - Add missing_kfree.patch, Introduce missing kfree in case of failed
+      allocation of packet buffer
+    - Add irqdeadlock.patch, Use forw_bcast_list_lock always in disabled
+      interrupt context
+    - Add vis_rounding.patch, Fixes rounding issues in vis.c
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 20 Dec 2009 00:24:11 +0100
+
+batman-adv-kernelland (0.2-2) unstable; urgency=low
+
+  * Recommend batctl instead of deprecated batman-adv-battool
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 08 Nov 2009 23:17:12 +0100
+
+batman-adv-kernelland (0.2-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Convert to 3.0 (quilt) source format
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 08 Nov 2009 14:41:07 +0100
+
+batman-adv-kernelland (0.2~beta~svn1453-1) experimental; urgency=low
+
+  * New Upstream Snapshot
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Thu, 22 Oct 2009 23:03:21 +0200
+
+batman-adv-kernelland (0.2~beta~svn1440-1) experimental; urgency=low
+
+  * New Upstream Snapshot
+  * debian/patches:
+    - Remove upstream merged patches disable-csum-offloading.patch,
+      filled_socketbuffer.patch
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Thu, 15 Oct 2009 20:14:06 +0200
+
+batman-adv-kernelland (0.2~beta~svn1436-1) experimental; urgency=low
+
+  * New Upstream Snapshot
+  * debian/patches:
+    - Remove upstream merged patches inactive_interface.patch,
+      uninitialised_socket.patch, correct_vis_entries.patch,
+      oops_deactivated_interface.patch, clamp_ttl.patch, netdevice_ops.patch
+    - Remove patches which cannot be backported, linux-2.6.19.patch,
+      linux-2.6.18.patch, linux-2.6.17.patch, linux-2.6.15.patch
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 13 Sep 2009 20:25:08 +0200
+
+batman-adv-kernelland (0.2~beta~svn1397-1) experimental; urgency=low
+
+  * New Upstream Version
+  * Upgraded to policy 3.8.3, no changes required
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 16 Aug 2009 12:43:04 +0200
+
+batman-adv-kernelland (0.2~beta~svn1370-1) experimental; urgency=low
+
+  * New Upstream Snapshot
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Thu, 06 Aug 2009 19:25:31 +0200
+
+batman-adv-kernelland (0.2~beta~svn1336-1) experimental; urgency=low
+
+  * New Upstream Snapshot (Closes: #537149)
+  * debian/patches:
+    - Remove upstream merged patches 100-iface-after-forward-broadcast.patch,
+      101-rcu_iflist.patch, 102-log-irqenable-sleep.patch,
+      103-icmp-userspace-read.patch, 104-endless-recv.patch,
+      105-icmp-check.patch
+  * Remove quilt due to removed patches
+  * Recommend batctl instead of transitional package batman-adv-battool
+  * Update copyright years in debian/changelog
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Wed, 15 Jul 2009 17:35:14 +0200
+
+batman-adv-kernelland (0.1-13) unstable; urgency=low
+
+  * Correct minor dep3 tagging problems in debian/patches/
+  * Provide batman-adv-dkms package that uses DKMS to dynamically build modules
+    for the local kernel
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Tue, 20 Oct 2009 17:39:11 +0200
+
+batman-adv-kernelland (0.1-12) unstable; urgency=low
+
+  * debian/patches:
+    - Add filled_socketbuffer.patch, Fixing race condition while handling lots
+      of data
+    - Add disable-csum-offloading.patch, Disable checksum offloading
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Thu, 15 Oct 2009 19:41:36 +0200
+
+batman-adv-kernelland (0.1-11) unstable; urgency=low
+
+  * Upgraded to policy 3.8.3, no changes required
+  * Add README.source with information about patch management
+  * debian/patches:
+    - Change to dep3 patch tagging guidelines
+    - Remove number before patches as order is given by debian/patches/series
+    - Add inactive_interface.patch, Disable originator output when interface is
+      disabled
+    - Add uninitialised_socket.patch, Don't read from uninitialised socket
+    - Add correct_vis_entries.patch, Calculate correct number of vis_entries
+      when receiving undersized packet
+    - Add oops_deactivated_interface.patch, Fix crash when sending vis packets
+      on disabled interface
+    - Add clamp_ttl.patch, Don't forward packets with ttl 255 after receiving
+      packet with ttl 0
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 13 Sep 2009 20:07:24 +0200
+
+batman-adv-kernelland (0.1-10) unstable; urgency=low
+
+  * debian/patches:
+    - Add 106-netdevice_ops.patch, fix compilation against linux-2.6.31-rc1
+      (Closes: #534631)
+    - Add 107-linux-2.6.19.patch, 108-linux-2.6.18.patch,
+      109-linux-2.6.17.patch, 110-linux-2.6.15.patch, backport to linux-2.6.15
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Fri, 07 Aug 2009 22:44:56 +0200
+
+batman-adv-kernelland (0.1-9) unstable; urgency=low
+
+  * debian/rules:
+    - Use the kernel makefiles directly to build the module to match
+      linux-modules-extra-2.6 way of building it
+    - Add get-orig-source target to retrieve source
+  * debian/patches:
+    - 103-outoftree_kbuild.patch, remove due to different linux module build
+      approach
+    - Add 103-icmp-userspace-read.patch, read complete icmp packet from
+      userspace
+    - Add 104-endless-recv.patch, consume even ignored packets to allow kernel
+      receive thread to sleep
+    - Add 105-icmp-check.patch, check for correct icmp version before sending it
+  * Convert debian/copyright to new dep5 version
+  * Upgraded to policy 3.8.2, no changes required
+  * Add debian/get-orig-source.sh to get source from svn or via uscan
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Thu, 25 Jun 2009 01:08:41 +0200
+
+batman-adv-kernelland (0.1-8) unstable; urgency=low
+
+  * Allow Debian Maintainers to upload new versions of batman-adv-kernelland
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Wed, 06 May 2009 13:04:37 +0200
+
+batman-adv-kernelland (0.1-7) unstable; urgency=low
+
+  * Install kernel module source tarball to batman-adv.tar.bz2 instead of
+    batman-adv-source.tar.bz2
+  * Allow out of tree module build for linux-modules-extra-2.6
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Thu, 09 Apr 2009 20:00:59 +0200
+
+batman-adv-kernelland (0.1-6) unstable; urgency=low
+
+  * Move to new section kernel
+  * Upgraded to policy 3.8.1, no changes required
+  * debian/control: Move Vcs-* to git.debian.org
+  * Add quilt as patch system to debian/rules
+  * debian/patches:
+    - Add 100-iface-after-forward-broadcast.patch to fix invalid memory
+      access after forwarding broadcast ethernet frames
+    - Add 101-rcu_iflist.patch to always use rcu save functions to access
+      if_list
+    - Add 102-log-irqenable-sleep.patch to enable irqs again when reading log
+      which may sleep when putting data to userspace
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Thu, 02 Apr 2009 21:09:50 +0200
+
+batman-adv-kernelland (0.1-5) unstable; urgency=low
+
+  * Correct variable to specify path to kernel headers
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Mon, 09 Feb 2009 13:25:06 +0100
+
+batman-adv-kernelland (0.1-4) unstable; urgency=low
+
+  * Correct URL in watch file to match newer releases
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Tue, 20 Jan 2009 00:51:45 +0100
+
+batman-adv-kernelland (0.1-3) unstable; urgency=low
+
+  * Correct plural in debian/README.Debian
+  * Recommend batman-adv-battool
+  * Depend on dephelper 7 in generated source packages
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 11 Jan 2009 14:04:18 +0100
+
+batman-adv-kernelland (0.1-2) unstable; urgency=low
+
+  * Split batman-adv source package in batman-adv-kernelland and battool
+    to match with upstream released tar.gz
+  * Install README with usage instructions
+  * Make bzip2 an arch independent dependency for module source creation
+  * Remove toplevel stamps with dh_clean (>=7)
+  * Change upstream url to http://www.open-mesh.net/
+  * Replace dh_clean -k with dh_prep in debian/rules
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Fri, 02 Jan 2009 14:20:44 +0100
+
+batman-adv (0.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Install upstream changelog for batman-adv-source
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 28 Dec 2008 12:37:37 +0100
+
+batman-adv (0.1~beta+svn1154-1) unstable; urgency=low
+
+  * Support changed directory layout in upstream
+  * Correct name of battool package in debian/Readme.DEBIAN
+  * Fix installation of the renamed kernel module
+  * Replace batman-adv@packages.debian.org maintainer with first Uploader in
+    debian/control
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Mon, 17 Nov 2008 11:28:35 +0100
+
+batman-adv (0.1~beta+svn1141-1) unstable; urgency=low
+
+  * Update to upstream revision 1141
+  * debian/copyright:
+    - Add Andreas Langer who has also copyright to battool/*
+    - Set copyright of debian/* to Simon Wunderlich and myself
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 26 Oct 2008 09:42:25 +0100
+
+batman-adv (0.1~beta+svn1105-3) unstable; urgency=low
+
+  * reuse orig.tar.gz from 0.1~beta+svn1105-1 release
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sun, 14 Sep 2008 14:24:34 +0200
+
+batman-adv (0.1~beta+svn1105-2) unstable; urgency=low
+
+  * remove useless dh_install* and dh_shlibdeps -i from rules
+  * move maintainer to uploaders field in control for multiple maintainers
+  * add debian watch file for uscan/dehs
+
+ -- Sven Eckelmann <sven.eckelmann@gmx.de>  Sat, 13 Sep 2008 01:19:11 +0200
+
+batman-adv (0.1~beta+svn1105-1) unstable; urgency=low
+
+  * update to upstream revision 1105 (various fixes)
+
+ -- Simon Wunderlich <siwu@hrz.tu-chemnitz.de>  Mon, 11 Aug 2008 14:04:34 +0200
+
+batman-adv (0.1~beta+svn1092-1) unstable; urgency=low
+
+  [ Sven Eckelmann ]
+  * clean up orig (some paths were only included for symlinked files)
+  * remove dpatch prebuild dependency 
+  * fix copyright issues
+  * clean up debian/rules, use dh_testroot
+  * fix package descriptions
+  * upstream fixes copyright notes
+
+ -- Simon Wunderlich <siwu@hrz.tu-chemnitz.de>  Mon, 07 Jul 2008 00:29:07 +0200
+
+batman-adv (0.1~beta+svn1091-1) unstable; urgency=low
+
+  [ Sven Eckelmann ]
+  * update to latest upstream svn revision (fixes some bugs)
+  * Use batman-adv as short name instead of batman-adv-source
+  * Push module standard version to 3.8.0
+  * DEB_BUILD_OPTIONS support for noopt
+  * Fix lintian warning latest-debian-changelog-entry-without-new-date 
+  * add git vcs to control file
+  * clean up source package
+
+  [ Simon Wunderlich ]
+  * remove predependency of dialog for battool
+
+ -- Simon Wunderlich <siwu@hrz.tu-chemnitz.de>  Sat, 05 Jul 2008 18:12:25 +0200
+
+batman-adv (0.1~beta+svn1082-2) unstable; urgency=low
+
+  * fix Description for batman-adv-battool
+
+ -- Simon Wunderlich <siwu@hrz.tu-chemnitz.de>  Sun, 22 Jun 2008 20:51:13 +0200
+
+batman-adv (0.1~beta+svn1082-1) unstable; urgency=low
+
+  * Initial release (Closes: #478729) 
+
+ -- Simon Wunderlich <siwu@hrz.tu-chemnitz.de>  Sun, 27 Apr 2008 21:02:23 +0200
+

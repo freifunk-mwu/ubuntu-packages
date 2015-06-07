@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/-(alpha|beta|rc)/~$1/" \
+ http://downloads.open-mesh.net/batman/stable/sources/batctl/batctl-(.*).tar.gz
