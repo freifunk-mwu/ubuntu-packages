@@ -1,9 +1,21 @@
+alfred (2015.0-0ffmwu1~trusty) trusty; urgency=medium
+
+  * fix missing build dependency libcap-dev
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Wed, 03 Jun 2015 17:05:18 +0200
+
+alfred (2015.0-0ffmwu0~trusty) trusty; urgency=medium
+
+  * new upstream release
+
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Mon, 18 May 2015 14:49:05 +0200
+
 alfred (2014.4.0-0ffmwu1~trusty) trusty; urgency=low
 
   * add patch: Tighten size check on received packet
     http://git.open-mesh.org/alfred.git/patch/0e2728c19f507403d31bacb94840f760197d4ccb
 
- -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Fri, 23 Jan 2015 23:36:29 +010
+ -- Tobias Hachmer (KokelNET) <network@kokelnet.de>  Fri, 23 Jan 2015 23:36:29 +0100
 
 alfred (2014.4.0-0ffmwu0~trusty) trusty; urgency=low
 
