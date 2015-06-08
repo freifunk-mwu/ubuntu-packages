@@ -26,7 +26,7 @@ Description: Source for the batman-advanced kernel module
 
 Package: batman-adv-dkms
 Architecture: all
-Depends: ${misc:Depends}, linux-headers-virtual
+Depends: ${misc:Depends}, linux-headers
 Recommends: batctl
 Description: DKMS Source for the batman-advanced kernel module
  This package contains the source for the batman-adv-source kernel modules,
